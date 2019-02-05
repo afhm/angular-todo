@@ -1,0 +1,57 @@
+
+//MIXIN FOR CUSTOM FONTS//
+
+// @mixin font-face($style-name, $file, $family, $category:"") {
+//     $filepath: "../../../fonts/" + $family + "/" + $file;
+//     @font-face {
+//         font-family: "#{$style-name}";
+//         src: url($filepath + ".ttf")  format('truetype');
+//     }
+//     %#{$style-name} {
+//         font: {
+//             @if $category != "" {
+//                 family: "#{$style-name}", #{$category};
+//             }
+//             @else {
+//                 family: "#{$style-name}";
+//                 weight: normal;
+//             }
+//         }
+//     }
+// }
+
+
+//
+//* MIXIN FOR CUSTOM MEDIA QUERY MANAGER*/
+
+// /*breakpoint argument choices
+// -phone
+// -tab-port
+// -tab-land
+// -big-desktop
+
+// 1em = 16px
+// */
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == newphone1 {
+       @media (max-width: 20em){ @content }; //600px
+      }
+ 
+    @if $breakpoint == newphone {
+       @media (max-width: 26.5em){ @content }; //424px
+      }
+ 
+    @if $breakpoint == phone {
+     @media (max-width: 27.5em){ @content }; //440px
+    }
+    @if $breakpoint == tab-port {
+     @media (max-width: 64em){ @content }; //440px-1024px
+    }
+    @if $breakpoint == mac {
+     @media (min-width: 90em){ @content }; //1024-1440px
+    }
+    @if $breakpoint == large {
+     @media (min-width: 112.5em){ @content }; //1800px+
+    }
+ }

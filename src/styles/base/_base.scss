@@ -1,0 +1,74 @@
+//--------------------------------------------------------------------------
+// This file contains all base Styles.
+// //--------------------------------------------------------------------------
+
+/**
+ * All elements reset
+ */
+
+ *,
+ *::before,
+ *::after {
+     margin: 0;
+     padding: 0;
+     box-sizing: inherit;
+ }
+ 
+ /**
+  * Adjust font size across multiple screens
+  */
+ html {
+     font-size: 62.5%; // 1rem = 10px; 10px/16 = 62.5%
+ 
+     @include respond(tab-land) {
+         font-size: 56.25%; //1 rem = 9px; 9/16 = 56.25%
+     }
+ 
+     @include respond(newphone) {
+         font-size: 55%;
+     }
+     @include respond(newphone1) {
+         font-size: 47.5%;
+     }
+     @include respond(mac) {
+         font-size: 70.5%;
+     }
+ 
+     @include respond(large) {
+         font-size: 85%;
+     }
+
+    
+ }
+ 
+ 
+ body {
+     box-sizing: border-box;
+     background-color: #ffd5d5;    // #eef5f9
+    
+ }
+ 
+ 
+ 
+ /**
+  * Basic styles for links
+  */
+ 
+  a:link,:visited {
+     text-decoration: none;
+     color: $link-color;
+     cursor:pointer;
+     transition: .3s all;
+     font-size: 1rem;
+ }
+ 
+ a:hover {
+     color: #52a3e6;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 

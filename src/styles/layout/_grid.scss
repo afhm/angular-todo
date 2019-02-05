@@ -1,0 +1,9 @@
+/*TODO APP GRID LAYOUT
+  ==============================================================================*/
+
+  .container {
+    display: grid;
+    
+    grid-template-rows: repeat(3,min-content);
+    // grid-template-columns: repeat(8,1fr);
+}

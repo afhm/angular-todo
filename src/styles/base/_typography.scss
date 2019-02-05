@@ -1,0 +1,72 @@
+/* Typography
+   ========================================================================== */
+   body {
+    font-family: $font-primary;
+    color: #000;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+%heading {
+    font-family: $font-display;
+    font-weight: 300;
+}
+
+.heading-1 {
+    @extend %heading;
+    font-size: 4.5rem;
+    line-height: 1;
+}
+
+.heading-2 {
+    @extend %heading;
+    font-size: 4rem;
+    font-style: $font-primary;
+    font-weight: 200;
+    color: #000000;
+    line-height: 1;
+    text-align: center;
+}
+
+.heading-3 {
+    @extend %heading;
+    font-size: 2rem;
+    color: #000;
+}
+
+.heading-4 {
+    @extend %heading;
+    font-size: 1.2rem;
+    color: #000000;
+
+    a {
+        font-size: 1.2rem;
+    }
+}
+
+.pickup {
+    font-weight: 100;
+    padding: 0 11rem 0 11rem;
+    font-family: "serif";
+    font-size: 3rem;
+    color: #ffffff;
+}
+
+.pickup--login {
+    padding: 0 22rem 0 22rem;
+    font-size: 3rem;
+
+    @include respond(big-desktop) {
+        padding: 0 30rem 0 30rem;
+    }
+}
+
+.heading-signup {
+    color: #ffffff;
+    padding: 0 22rem 0 22rem;
+    font-size: 1.6rem;
+
+    @include respond(big-desktop) {
+        padding: 0 25rem 0 25rem;
+    }
+}
