@@ -1,9 +1,12 @@
 //////// main.scss
 
+
 @import "abstracts/mixins";
 @import "abstracts/variables";
 
 @import "base/reset";
+@import "base/base";
+@import "base/fonts";
 @import "base/typography";
 
 
