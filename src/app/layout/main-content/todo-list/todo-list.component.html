@@ -7,7 +7,8 @@
       <small>Tue 5 Feb</small>
     </div>
 
-    <button class=" form__button btn btn--brown">Log In</button>
+    <input type="text" [style.display]="hidden ? 'none' : 'block'"  #newTaskInput>
+    <button class=" form__button btn btn--brown" (click)="addTaskBtn()">Add Task</button>
 
     <div class="main__tasks__editor__section">
 

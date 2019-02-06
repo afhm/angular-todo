@@ -8,6 +8,19 @@ import {Todo } from './todo.model';
 })
 export class TodoListComponent implements OnInit {
 
+  hidden:boolean = true;
+
+  addTaskBtn(){
+
+    if(this.hidden == true){
+      this.hidden = false;
+    }
+    else{
+      this.hidden = true;
+    }
+  }
+
+
   todos: Todo[] = [
     new Todo(5,'This is a test todo','programming'),
     new Todo(5,'This is a test todo','programming'),
