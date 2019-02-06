@@ -1,0 +1,52 @@
+.main {
+    &__tasks {
+        display: grid;
+        grid-template-rows: repeat(2,auto);
+        border-right: 1px solid #f1f1f1;
+        padding: 3rem;
+        height: 100%;
+
+        &__editor {
+            display: grid;
+            grid-template-rows: repeat(2,auto);
+            grid-row-gap: 1.5rem;
+
+            &__date {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                grid-column-gap: 0.5rem;
+                align-items: center;
+            }
+
+            &__section {
+                display: grid;
+                grid-row-gap: 1.5rem;
+
+                .task {
+                    display: grid;
+                    grid-template-columns:5.3rem repeat(2,1fr);
+                    grid-column-gap: 1.5rem;
+                    padding-bottom: 1rem;
+                    border-bottom: 1px solid #f1f1f1;
+                    align-items: center;
+
+                    &__time {
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                    }
+
+                    &__body{
+                        font-size: 1.7rem;
+                    }
+                    
+                    &__project {
+                        font-size: 1rem;
+                        place-self:center end;
+                    }
+                }
+            }
+        }
+
+
+    }
+}

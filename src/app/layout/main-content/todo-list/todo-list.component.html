@@ -1,0 +1,26 @@
+<div class="main__tasks">
+
+  <div class="main__tasks__editor">
+
+    <div class="main__tasks__editor__date">
+      <h3 class="heading-3">Today</h3>
+      <small>Tue 5 Feb</small>
+    </div>
+
+    <button class=" form__button btn btn--brown">Log In</button>
+
+    <div class="main__tasks__editor__section">
+
+      <div class="task" *ngFor="let todo of todos">
+        <div class="task__time">{{todo.taskTime}} PM</div>
+        <div class="task__body">{{todo.taskDesc}}</div>
+        <div class="task__project">{{todo.taskProject}}</div>
+      </div>
+
+    </div>
+
+    <div class="main__addtask">+ addtask</div>
+
+  </div>
+
+</div>
