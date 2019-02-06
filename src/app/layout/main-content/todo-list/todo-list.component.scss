@@ -30,7 +30,7 @@
 
                 .task {
                     display: grid;
-                    grid-template-columns:5.3rem repeat(2,1fr);
+                    grid-template-columns:auto repeat(2,1fr);
                     grid-column-gap: 1.5rem;
                     padding-bottom: 1rem;
                     border-bottom: 1px solid #f1f1f1;

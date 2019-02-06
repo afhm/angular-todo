@@ -9,24 +9,33 @@ import {Todo } from './todo.model';
 export class TodoListComponent implements OnInit {
 
   hidden:boolean = true;
+  
+  inputValue:string = '';
 
-  addTaskBtn(){
+  todos = [];
+
+  addTaskBtn(taskTime,taskDescr,taskProject){
 
     if(this.hidden == true){
       this.hidden = false;
     }
     else{
+
+      this.todos.push({ taskTime,taskDescr,taskProject });
+
+      this.inputValue = null;
+      
+      console.log(this.todos);
+
+
       this.hidden = true;
     }
+
+
   }
 
 
-  todos: Todo[] = [
-    new Todo(5,'This is a test todo','programming'),
-    new Todo(5,'This is a test todo','programming'),
-
-    
-  ];
+  
 
   constructor() { }
 
