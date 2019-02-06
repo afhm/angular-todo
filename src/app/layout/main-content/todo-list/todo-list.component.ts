@@ -21,14 +21,21 @@ export class TodoListComponent implements OnInit {
     }
     else{
 
-      this.todos.push({ taskTime,taskDescr,taskProject });
+      if( taskTime == '' || taskDescr == '' || taskProject == ''){
+        // do nothing
+        alert('fill all inputs');
+      }
+      else{
 
-      this.inputValue = null;
-      
-      console.log(this.todos);
+        this.todos.push({ taskTime,taskDescr,taskProject });
+
+        this.inputValue = null;
+        
+        console.log(this.todos);
 
 
-      this.hidden = true;
+        this.hidden = true;
+      }
     }
 
 
