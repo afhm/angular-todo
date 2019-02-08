@@ -1,36 +1,44 @@
-import { Component, OnInit } from '@angular/core';
-import {Todo } from './todo.model';
+import {
+  Component,
+  OnInit,
+  OnDestroy
+} from '@angular/core';
+import {
+  TodoService
+} from './todo.service';
+import {
+  Todo
+} from './todo.model';
+import {
+  Subscription
+} from 'rxjs';
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.scss']
+  styleUrls: ['./todo-list.component.scss'],
 })
-export class TodoListComponent implements OnInit {
+export class TodoListComponent implements OnInit, OnDestroy {
 
-  hidden:boolean = true;
+  todos: Todo[];
+  private subscription: Subscription;
 
-  addTaskBtn(){
-
-    if(this.hidden == true){
-      this.hidden = false;
-    }
-    else{
-      this.hidden = true;
-    }
-  }
-
-
-  todos: Todo[] = [
-    new Todo(5,'This is a test todo','programming'),
-    new Todo(5,'This is a test todo','programming'),
-
-    
-  ];
-
-  constructor() { }
+  constructor(private todoService: TodoService) {}
 
   ngOnInit() {
+    this.todos = this.todoService.getTodos();
+    this.subscription = this.todoService.todosChanged
+      .subscribe(
+        (todos: Todo[]) => {
+          this.todos = todos;
+        }
+      );
+  }
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
+  onEditTodo(index: number) {
+    this.todoService.startedEditing.next();
+  }
 }
