@@ -34,6 +34,7 @@ export class AddTodoComponent implements OnInit, OnDestroy {
     const value = form.value;
     const newTodo = new Todo(value.time,value.task,value.project);
     this.todoService.addTodos(newTodo);
+    this.show = false;
   }
 
   toggle() {
