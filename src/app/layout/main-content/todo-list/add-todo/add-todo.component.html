@@ -1,11 +1,11 @@
 <button class="plus" (click)="toggle()"><i class="fas fa-plus 2x"></i></button>
-<form (ngSubmit)="onAddTodo(f)" #f="ngForm">
-  <div class="addTaskDiv" *ngIf="show">
+<form (ngSubmit)="onAddTodo(todoForm)" #todoForm="ngForm">
+  <div class="addTaskDiv" *ngIf="showw">
     <h2>Quick Add Task</h2>
     <input class="addTaskDiv__input time" type="text" name="time" ngModel pattern="((([1-9])|(1[0-2])):([0-5])(0|5)\s(A|P|a|p)(M|m))">
     <input class="addTaskDiv__input task" type="text" name="task" ngModel required>
     <input class="addTaskDiv__input project" type="text" name="project" ngModel required>
-    <i class="fas fa-times fa-2x close"></i>
     <button class="btn btn--brown addTaskDiv--btn" type="submit" [disabled]="!f.valid">Add Task</button>
+    <button (click)="onclose()" class="btn btn--brown addTaskDiv--btn" type="submit" [disabled]="!f.valid">Cancel</button>
   </div>
 </form>

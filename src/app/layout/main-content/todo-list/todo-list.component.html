@@ -1,25 +1,28 @@
 <div class="main__tasks">
 
-  <div class="main__tasks__editor">
+  <div class="tasks__editor">
 
     <div class="main__tasks__editor__date">
       <h3 class="heading-3">Today</h3>
       <small class="day">Tue 5 Feb</small>
     </div>
 
-
-
     <app-add-todo></app-add-todo>
 
     <div class="main__tasks__editor__section">
 
-      <div class="task" *ngFor="let todo of todos">
+      <div class="task" *ngFor="let todo of todos; let i = index" (click)="onEditTodo(i)">
+
+        <div (click)="onDelete(i)"> <i class="far fa-check-circle fx-2x task__delete"></i></div>
+
         <div class="task__time">{{todo.taskTime}}</div>
         <div class="task__body">{{todo.taskDesc}}</div>
         <div class="task__project">{{todo.taskProject}}</div>
+
       </div>
+      <app-todo-edit></app-todo-edit>
 
     </div>
-  </div>
 
+  </div>
 </div>

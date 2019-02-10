@@ -10,6 +10,8 @@ import { MainContentComponent } from './layout/main-content/main-content.compone
 import { AddTodoComponent } from './layout/main-content/todo-list/add-todo/add-todo.component';
 import { TodoListComponent } from './layout/main-content/todo-list/todo-list.component';
 import { TodoService } from './layout/main-content/todo-list/todo.service';
+import { TodoEditComponent } from './layout/main-content/todo-list/todo-edit/todo-edit.component';
+import { OpenCloseDirective } from './shared/directives/open-close.directive';
 
 
 @NgModule({
@@ -21,6 +23,8 @@ import { TodoService } from './layout/main-content/todo-list/todo.service';
     TodoListComponent,
     FeaturePanelComponent,
     AddTodoComponent,
+    TodoEditComponent,
+    OpenCloseDirective,
   ],
   imports: [
     BrowserModule,

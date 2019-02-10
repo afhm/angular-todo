@@ -1,5 +1,4 @@
-import { Subscription } from 'rxjs';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Todo } from '../todo.model';
 import { TodoService } from './../todo.service';
 import { NgForm } from '@angular/forms';
@@ -9,37 +8,31 @@ import { NgForm } from '@angular/forms';
 	templateUrl: './add-todo.component.html',
 	styleUrls: [ './add-todo.component.scss' ]
 })
-export class AddTodoComponent implements OnInit, OnDestroy {
-  
-  subscription: Subscription;
-  editMode = false;
-  editedTodoIndex: number; 
+export class AddTodoComponent implements OnInit {
+   
 
-  public show:boolean = false;
-
+  showw = false;
+  @ViewChild('todoForm') todoForm: NgForm;
 
 	constructor(private todoService: TodoService) {}
 
   ngOnInit() {
-    this.subscription = this.todoService.startedEditing
-      .subscribe(
-        (index: number) => {
-          this.editedTodoIndex = index;
-          this.editMode = true;
-        }
-      );
   }
   
   onAddTodo(form: NgForm) {
     const value = form.value;
     const newTodo = new Todo(value.time,value.task,value.project);
     this.todoService.addTodos(newTodo);
+    this.showw = false;
+    form.reset();
   }
 
   toggle() {
-    this.show = !this.show;
+    this.showw = !this.showw;
   }
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
+
+  onclose() {
+    this.todoForm.reset();
+    this.showw = false;
   }
 }

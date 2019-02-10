@@ -1,49 +1,40 @@
-.addTaskDiv {
+.editTaskDiv {
   display: grid;
-  grid-template-rows: repeat(3, min-content);
-  grid-template-columns: 10rem 1fr 1fr 1fr;
-  grid-row-gap: 1rem;
+  grid-template-rows: repeat(2, min-content);
+  grid-template-columns: 9rem min-content 1fr 1fr;
+  grid-row-gap: 0.5rem;
   grid-column-gap: 1rem;
   padding: 1rem 2rem 2rem 2rem;
-  border: 1px solid #f1f1f1;
   background-color: #ffffff;
   border-radius: 1rem;
 
   &__input {
     border-radius: 1rem;
     outline: 0;
-    border: 1px solid #f1f1f1;
     padding: 0.8rem 1.3rem;
+    border: 1px solid #f1f1f1;
     background-color: rgb(255, 255, 255);
   }
 
-  .time {
-    grid-row: 2/3;
-  }
+  .time {}
 
-  .task {
-    grid-row: 2/3;
-  }
+  .task {}
 
-  .project {
-    grid-row: 2/3;
-  }
+  .project {}
 
   .close {
-    // justify-self: end;
+    justify-self: end;
   }
 
   &--btn {
-    grid-row: 3/4;
-    width: 8rem;
-    height: 3rem;
+    grid-row: 5/6;
+    width: 12rem;
+    height: 3.5rem;
     padding: 1rem;
     background-color: #db4c3f;
     font-weight: 700;
-    font-size: 1.2rem;
     border-radius: 0.5rem;
     color: white;
-    line-height: 1rem;
     border: none;
     cursor: pointer;
     transition: all .2s;

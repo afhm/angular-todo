@@ -21,6 +21,7 @@ import {
 export class TodoListComponent implements OnInit, OnDestroy {
 
   todos: Todo[];
+
   private subscription: Subscription;
 
   constructor(private todoService: TodoService) {}
@@ -38,7 +39,13 @@ export class TodoListComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+
   onEditTodo(index: number) {
-    this.todoService.startedEditing.next();
+    this.todoService.startedEditing.next(index);
   }
+
+  onDelete(deleteIndex) {
+    this.todoService.deleteTodo(deleteIndex);
+  }
+
 }

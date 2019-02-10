@@ -11,6 +11,7 @@
     &__editor {
       display: grid;
       grid-template-rows: repeat(4, auto);
+      grid-row-gap: 1rem;
 
       &__date {
         display: grid;
@@ -28,14 +29,29 @@
 
         .task {
           display: grid;
-          grid-template-columns: 5.3rem repeat(2, 1fr);
-          margin-bottom: 1rem;
+          grid-template-columns: 4rem min-content 1fr 1fr;
+          padding-bottom: 1rem;
+          padding-top: 1rem;
           border-bottom: 1px solid #f1f1f1;
           align-items: center;
+
+          &__delete {
+            font-size: 2.3rem;
+            cursor: pointer;
+            color: rgb(151, 150, 150);
+            border: none;
+            transition: .3s;
+            opacity: 0.3;
+
+            &:hover {
+              opacity:1;
+            }
+          }
 
           &__time {
             font-size: 1.5rem;
             font-weight: 600;
+            width: 8rem;
           }
 
           &__body {
@@ -131,5 +147,3 @@
   }
 
 }
-
-
