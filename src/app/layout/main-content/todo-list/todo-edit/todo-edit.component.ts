@@ -65,7 +65,7 @@ export class TodoEditComponent implements OnInit, OnDestroy {
     console.log(this.editedTodoIndex);
   }
 
-  close() {
+  onclose() {
     this.editMode = false;
   }
 
