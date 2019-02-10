@@ -6,6 +6,6 @@
     <input class="addTaskDiv__input task" type="text" name="task" ngModel required>
     <input class="addTaskDiv__input project" type="text" name="project" ngModel required>
     <button class="btn btn--brown addTaskDiv--btn" type="submit" [disabled]="!f.valid">Add Task</button>
-    <button (click)="onclose()" class="btn btn--brown addTaskDiv--btn" type="submit" [disabled]="!f.valid">Cancel</button>
+    <button (click)="onclose()" class="btn btn--brown addTaskDiv--btn">Cancel</button>
   </div>
 </form>
