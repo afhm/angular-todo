@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 export class TodoService {
     todosChanged = new Subject<Todo[]>();
     startedEditing = new Subject<number>();
+    
 	private todos: Todo[] = [
         new Todo('4:00 am','asdsa','asdsa')
     ];
