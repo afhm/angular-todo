@@ -42,6 +42,8 @@ export class TodoListComponent implements OnInit, OnDestroy {
 
   onEditTodo(index: number) {
     this.todoService.startedEditing.next(index);
+    this.todoService.getTodo(index).editing = true;
+    console.log(this.todos[index].editing);
   }
 
   onDelete(deleteIndex) {

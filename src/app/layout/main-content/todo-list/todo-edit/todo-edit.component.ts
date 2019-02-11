@@ -43,6 +43,7 @@ export class TodoEditComponent implements OnInit, OnDestroy {
         (index: number) => { // enter this anonymous function if startedEditing was triggered
           this.editedTodoIndex = index;
           this.editMode = true;
+          console.log("inised edit");
           this.editedTodo = this.todoService.getTodo(index);
           this.editTodoForm.setValue({
             time: this.editedTodo.taskTime,
@@ -58,15 +59,16 @@ export class TodoEditComponent implements OnInit, OnDestroy {
   }
   onSubmit(form: NgForm) {
     const value = form.value;
-    const newTodo = new Todo(value.time, value.task, value.project);
+    const newTodo = new Todo(value.time, value.task, value.project,false);
     this.todoService.updateTodo(this.editedTodoIndex, newTodo);
     this.editMode = false;
     form.reset();
-    console.log(this.editedTodoIndex);
   }
 
   onclose() {
     this.editMode = false;
+    // this.editedTodo.editing = false;
+    
   }
 
 
