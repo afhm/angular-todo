@@ -1,11 +1,9 @@
-<span [hidden]="!editMode">
   <form (ngSubmit)="onSubmit(editTodoForm)" #editTodoForm="ngForm">
     <div class="editTaskDiv">
-      <input class="editTaskDiv__input time" type="text" name="time" ngModel pattern="((([1-9])|(1[0-2])):([0-5])(0|5)\s(A|P|a|p)(M|m))">
-      <input class="editTaskDiv__input task" type="text" name="task" ngModel required>
-      <input class="editTaskDiv__input project" type="text" name="project" ngModel required>
+      <input class="editTaskDiv__input time" type="text" name="time" [(ngModel)]="formClickedtodo.taskTime" pattern="((([1-9])|(1[0-2])):([0-5])(0|5)\s(A|P|a|p)(M|m))">
+      <input class="editTaskDiv__input task" type="text" name="task" [(ngModel)]="formClickedtodo.taskDesc" required>
+      <input class="editTaskDiv__input project" type="text" name="project" [(ngModel)]="formClickedtodo.taskProject" required>
       <button class="btn btn--brown editTaskDiv--btn" type="submit" [disabled]="!editTodoForm.valid">Save</button>
-      <button (click)="onclose()" class="btn btn--brown editTaskDiv--btn">Cancel</button>
+      <button type="button" (click)="onclose(formClickedtodo)" class="btn btn--brown editTaskDiv--btn">Cancel</button>
     </div>
   </form>
-</span>

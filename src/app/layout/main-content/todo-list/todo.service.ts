@@ -6,7 +6,7 @@ export class TodoService {
     startedEditing = new Subject<number>();
     
 	private todos: Todo[] = [
-        new Todo('4:00 am','asdsa','asdsa')
+        new Todo('4:00 am','Drink coffee','home',false)
     ];
     
     getTodos() {

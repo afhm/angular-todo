@@ -2,7 +2,8 @@ import {
   Component,
   OnInit,
   OnDestroy,
-  ViewChild
+  ViewChild,
+  Input
 } from '@angular/core';
 import {
   Subscription
@@ -27,7 +28,7 @@ import {
 export class TodoEditComponent implements OnInit, OnDestroy {
 
   @ViewChild('editTodoForm') editTodoForm: NgForm;
-
+  @Input() formClickedtodo: Todo;
 
   subscription: Subscription;
   editMode = false;
@@ -49,6 +50,7 @@ export class TodoEditComponent implements OnInit, OnDestroy {
             task: this.editedTodo.taskDesc,
             project: this.editedTodo.taskProject
           })
+          this.formClickedtodo.editing = true;
         }
       );
   }
@@ -58,15 +60,16 @@ export class TodoEditComponent implements OnInit, OnDestroy {
   }
   onSubmit(form: NgForm) {
     const value = form.value;
-    const newTodo = new Todo(value.time, value.task, value.project);
+    const newTodo = new Todo(value.time, value.task, value.project,false);
     this.todoService.updateTodo(this.editedTodoIndex, newTodo);
     this.editMode = false;
-    form.reset();
+    this.formClickedtodo.editing=false
     console.log(this.editedTodoIndex);
   }
 
   onclose() {
-    this.editMode = false;
+    this.formClickedtodo.editing=false;
+    console.log(this.formClickedtodo);
   }
 
 

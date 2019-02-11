@@ -21,7 +21,7 @@ export class AddTodoComponent implements OnInit {
   
   onAddTodo(form: NgForm) {
     const value = form.value;
-    const newTodo = new Todo(value.time,value.task,value.project);
+    const newTodo = new Todo(value.time,value.task,value.project,false);
     this.todoService.addTodos(newTodo);
     this.showw = false;
     form.reset();

@@ -24,12 +24,11 @@ import { OpenCloseDirective } from './shared/directives/open-close.directive';
     FeaturePanelComponent,
     AddTodoComponent,
     TodoEditComponent,
-    OpenCloseDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [TodoService],
   bootstrap: [AppComponent]

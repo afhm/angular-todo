@@ -11,16 +11,21 @@
 
     <div class="main__tasks__editor__section">
 
-      <div class="task" *ngFor="let todo of todos; let i = index" (click)="onEditTodo(i)">
+      <div *ngFor="let todo of todos; let i = index" >
 
-        <div (click)="onDelete(i)"> <i class="far fa-check-circle fx-2x task__delete"></i></div>
+        <div class="task" *ngIf="!todo.editing">
 
-        <div class="task__time">{{todo.taskTime}}</div>
-        <div class="task__body">{{todo.taskDesc}}</div>
-        <div class="task__project">{{todo.taskProject}}</div>
+          <div (click)="onDelete(i)"> <i class="far fa-check-circle fx-2x task__delete"></i></div>
+          <div class="task__time" (click)="onEditTodo(i)">{{todo.taskTime}}</div>
+          <div class="task__body" (click)="onEditTodo(i)">{{todo.taskDesc}}</div>
+          <div class="task__project" (click)="onEditTodo(i)">{{todo.taskProject}}</div>
+        </div>
 
+
+      <div *ngIf="todo.editing">
+          <app-todo-edit [formClickedtodo]="todo"></app-todo-edit>
+        </div>
       </div>
-      <app-todo-edit></app-todo-edit>
 
     </div>
 
