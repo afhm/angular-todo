@@ -1,9 +1,9 @@
   <form (ngSubmit)="onSubmit(editTodoForm)" #editTodoForm="ngForm">
     <div class="editTaskDiv">
-      <input class="editTaskDiv__input time" type="text" name="time" [(ngModel)]="formClickedtodo.taskTime" pattern="((([1-9])|(1[0-2])):([0-5])(0|5)\s(A|P|a|p)(M|m))">
-      <input class="editTaskDiv__input task" type="text" name="task" [(ngModel)]="formClickedtodo.taskDesc" required>
-      <input class="editTaskDiv__input project" type="text" name="project" [(ngModel)]="formClickedtodo.taskProject" required>
+      <input tabindex="0" class="editTaskDiv__input time" type="text" name="time" [(ngModel)]="formClickedtodo.taskTime" pattern="((([1-9])|(1[0-2])):([0-5])(0|5)\s(A|P|a|p)(M|m))">
+      <input tabindex="0" class="editTaskDiv__input task" type="text" name="task" [(ngModel)]="formClickedtodo.taskDesc" required>
+      <input tabindex="0" class="editTaskDiv__input project" type="text" name="project" [(ngModel)]="formClickedtodo.taskProject" required>
       <button class="btn btn--brown editTaskDiv--btn" type="submit" [disabled]="!editTodoForm.valid">Save</button>
-      <button type="button" (click)="onclose(formClickedtodo)" class="btn btn--brown editTaskDiv--btn">Cancel</button>
+      <button type="button" (click)="onclose(editTodoForm)" class="btn btn--brown editTaskDiv--btn">Cancel</button>
     </div>
   </form>
